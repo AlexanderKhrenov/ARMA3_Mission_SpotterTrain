@@ -1,0 +1,26 @@
+
+systemChat "STRIKE!!!";
+_coordX = _this select 0; 
+_coordY = _this select 1;
+_shootNum = _this select 2; 
+_errorRange = _this select 3; 
+_errorDirection = 0;
+_error = 0;
+_i = 0; 
+
+
+#SHOOT
+
+? _errorRange > 0 : _error = random _errorRange;  
+? _errorRange > 0 : _errorDirection = random 360; 
+
+~0.5
+lastStrikeX = _coordX + _error*cos(_errorDirection) + _error*sin(_errorDirection);
+lastStrikeY = _coordY + _error*cos(_errorDirection) - _error*sin(_errorDirection);
+_bomb="M_Mo_82mm_AT_LG" createVehicle [lastStrikeX, lastStrikeY];
+~0.5
+_bomb="M_Mo_82mm_AT_LG" createVehicle [lastStrikeX, lastStrikeY];
+~0.5
+_bomb="M_Mo_82mm_AT_LG" createVehicle [lastStrikeX, lastStrikeY];
+_i=_i+1;
+?_i<_shootNum:goto "SHOOT";
