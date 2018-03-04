@@ -16,4 +16,4 @@ systemChat format ["%1, %2", playerPosition, playerDirection];
 _wait = 30 - (random 15);
 sleep _wait;
 
-[targetX, targetY, 1, 200]exec 'strike.sqs';
+[targetX, targetY, 1, 500]exec 'strike.sqs';
