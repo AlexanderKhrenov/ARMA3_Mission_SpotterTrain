@@ -1,6 +1,3 @@
-//#begin
-//bomb="M_Mo_82mm_AT_LG" createVehicle (getPos target);
-
 _handle= createdialog "setTarget";
 
 
